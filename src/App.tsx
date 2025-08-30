@@ -1,9 +1,12 @@
-import type { FC } from 'react'
+import { useMemo, type FC } from 'react'
+import { Provider } from 'react-redux'
 
-import { Button } from '@/components/ui'
+import { createStore } from './store'
 
 const App: FC = () => {
-  return <Button>Click me</Button>
+  const store = useMemo(() => createStore(), [])
+
+  return <Provider store={store}>Click me</Provider>
 }
 
 export default App
