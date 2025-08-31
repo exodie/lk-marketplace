@@ -1,6 +1,6 @@
 import type { Advertisment } from '@/types'
 
-export const advertisementsMocksData: Advertisment[] = [
+export const itemsMocksData: Advertisment[] = [
   {
     id: '1',
     name: 'Стул старинный',
@@ -204,7 +204,7 @@ export const advertisementsMocksData: Advertisment[] = [
 export const getMockAdvertisementData = async (): Promise<Advertisment[]> => {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(advertisementsMocksData)
+      resolve(itemsMocksData)
     }, 2500)
   })
 }

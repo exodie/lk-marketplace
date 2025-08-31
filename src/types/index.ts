@@ -10,19 +10,19 @@ export type DispatchApi<
 
 export type Advertisment = {
   /* Уникальный идентификатор. */
-  id: string
+  id?: string
   /* Название. */
-  name: string
+  name?: string
   /* Описание. */
   description?: string
   /* Цена. */
-  price: number
+  price?: number
   /* Дата и время создания. */
-  createdAt: string
+  createdAt?: string
   /* Количество просмотров. */
-  views: number
+  views?: number
   /* Количество лайков. */
-  likes: number
+  likes?: number
   /* Ссылка на изображение. */
   imageUrl?: string
 }
@@ -43,7 +43,7 @@ export type Order = {
   /* Уникальный идентификатор. */
   id: string
   /* Статус. */
-  status: number;
+  status: number
   /* Дата и время создания. */
   createdAt: string
   /* Дата и время завершения. */
@@ -64,3 +64,5 @@ export type Image = {
   /* Название. */
   name: string
 }
+
+export * from './reducers'

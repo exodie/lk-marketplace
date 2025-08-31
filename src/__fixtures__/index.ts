@@ -1,2 +1,2 @@
-export * from './advertisements'
+export * from './items'
 export * from './orders'

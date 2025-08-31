@@ -11,16 +11,21 @@
     "^react",
     "^react-dom/*",
     "^react-router-dom",
+    "^@reduxjs/toolkit",
     "^./(.*).css",
     "^../(.*)$",
     "<THIRD_PARTY_MODULES>",
-    "^@/__fixtures__/*",
+    "^@/actions/*",
     "^@/components/*",
-    "^@/lib/*",
-    "^@/hooks/*",
-    "^@/utils/*",
     "^@/constants/*",
-    "^@/store/*"
+    "^@/hooks/*",
+    "^@/lib/*",
+    "^@/pages/*",
+    "^@/reducers/*",
+    "^@/store/*",
+    "^@/utils/*",
+    "^@/types/*",
+    "^@/__fixtures__/*"
   ],
   "importOrderSeparation": true
 }

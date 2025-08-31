@@ -4,7 +4,7 @@ import { AUTHOR_NAME, AUTHOR_TITLE } from '@/constants'
 
 export const Footer = () => {
   return (
-    <footer className="py-2 px-4 flex sm:flex-row flex-col sm:items-center justify-between sm:gap-x-4">
+    <footer className="p-4 flex sm:flex-row flex-col sm:items-center justify-between sm:gap-x-4">
       <span>
         {AUTHOR_TITLE}
         <a
