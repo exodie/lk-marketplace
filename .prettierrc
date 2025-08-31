@@ -14,10 +14,13 @@
     "^./(.*).css",
     "^../(.*)$",
     "<THIRD_PARTY_MODULES>",
+    "^@/__fixtures__/*",
     "^@/components/*",
-    "^@/components/ui/*",
     "^@/lib/*",
-    "^@/hooks/*"
+    "^@/hooks/*",
+    "^@/utils/*",
+    "^@/constants/*",
+    "^@/store/*"
   ],
   "importOrderSeparation": true
 }
