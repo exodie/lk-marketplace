@@ -2,6 +2,8 @@ import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
 import { fetchItems } from '@/actions'
 
+import { UNKNOWN_ERROR } from '@/constants'
+
 import type { Advertisment, ItemsReducerType } from '@/types'
 
 export const initialState: ItemsReducerType = {
@@ -50,7 +52,7 @@ const itemsSlice = createSlice({
       .addCase(fetchItems.rejected, (state, action) => {
         state.isLoading = false
         state.error = {
-          message: action.error.message || 'Unknown error',
+          message: action.error.message || UNKNOWN_ERROR,
           code: (action.payload as unknown as Record<string, number>)?.code
         }
       })

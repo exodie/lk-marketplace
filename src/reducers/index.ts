@@ -1,3 +1,1 @@
-import { itemsReducer } from './items'
-
-export { itemsReducer }
+export * from './items'

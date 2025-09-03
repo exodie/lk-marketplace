@@ -3,10 +3,13 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { fetchItems } from '@/actions'
 
-import { type ItemsState } from '@/reducers/items'
+import { ItemsList, ItemsLoading, ItemsCard } from '@/components/items'
+
+import { type ItemsState } from '@/reducers'
 
 export const Home: FC = () => {
   const dispatch = useDispatch()
+
   const { data, isLoading, error } = useSelector(
     (state: { items: ItemsState }) => state.items
   )
@@ -17,15 +20,23 @@ export const Home: FC = () => {
     dispatch(fetchItems())
   }, [dispatch])
 
-  if (isLoading) return <div>Loading...</div>
-  if (error) return <div>Error: {error.message}</div>
-  if (!data) return null
+  if (isLoading) {
+    return <ItemsLoading />
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>
+  }
+
+  if (!data) {
+    return null
+  }
 
   return (
-    <>
+    <ItemsList>
       {data?.map((adverts) => (
-        <div key={adverts.id}>{adverts.name}</div>
+        <ItemsCard key={adverts.id} {...adverts} />
       ))}
-    </>
+    </ItemsList>
   )
 }
