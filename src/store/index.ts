@@ -1,17 +1,17 @@
-import { type Store, configureStore } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 
-import { itemsReducer } from '@/reducers'
+import { favoritesReducer, itemsReducer } from '@/reducers'
 
 const reducer = {
-  items: itemsReducer
+  items: itemsReducer,
+  favorites: favoritesReducer
 }
 
-export const createStore = (): Store => {
-  return configureStore({
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    reducer,
-    devTools: { name: 'LK_MARKETPLACE' },
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware()
-  })
-}
+export const store = configureStore({
+  reducer,
+  devTools: { name: 'LK_MARKETPLACE' },
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware()
+})
+
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispatch = typeof store.dispatch

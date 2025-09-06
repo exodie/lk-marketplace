@@ -6,6 +6,7 @@ import { fetchItems } from '@/actions'
 import { ItemsList, ItemsLoading, ItemsCard } from '@/components/items'
 
 import { type ItemsState } from '@/reducers'
+import type { Advertisment } from '@/types'
 
 export const Home: FC = () => {
   const dispatch = useDispatch()
@@ -35,7 +36,7 @@ export const Home: FC = () => {
   return (
     <ItemsList>
       {data?.map((adverts) => (
-        <ItemsCard key={adverts.id} {...adverts} />
+        <ItemsCard key={adverts.id} {...adverts as Required<Advertisment>} />
       ))}
     </ItemsList>
   )

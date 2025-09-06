@@ -1,15 +1,15 @@
-import { useMemo, type FC } from 'react'
+import { type FC } from 'react'
 import { Provider } from 'react-redux'
 import { Outlet } from 'react-router-dom'
 
-import { createStore } from './store'
+import { InitFavorites } from './components/tools'
+import { store } from './store'
 
 const App: FC = () => {
-  const store = useMemo(() => createStore(), [])
-
   return (
     <Provider store={store}>
       <Outlet />
+      <InitFavorites />
     </Provider>
   )
 }
